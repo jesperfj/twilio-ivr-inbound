@@ -10,7 +10,7 @@ This repo sets up a sample IVR on Twilio. Once deployed, you can test how it wor
 
 Install the CLI installer plugin with
 
-    $ twilio plugins:install https://github.com/jesperfj/plugin-installer
+    $ twilio plugins:install https://github.com/jesperfj/plugin-twilioapp
 
 It will prompt for a y/N since this is an untrusted installation source.
 
@@ -19,13 +19,15 @@ It will prompt for a y/N since this is an untrusted installation source.
 Clone the repo to your computer and open a terminal in the repo directory. Run
 
     $ npm install
-    $ twilio installer:install
+    $ twilio twilioapp:install
 
 This will do the following
 
 * Create a new serverless service on Twilio and deploy the IVR code in this repo
 * Deploy the code to Twilio that runs the IVR
 * Allocate a dedicated phone number to this IVR, costing $1 / month
+* Create a DynamoDB table and IAM user in your AWS account (assuming you're logged in and have creds in `~/aws/credentials`)
+* Set AWS credentials as serverless function variables. NOTE: This will set credentials for the purpose created IAM user. It will not use your main AWS credentials.
 
 ## Test
 
@@ -45,6 +47,5 @@ Once you've made a change, you can redeploy (without 'reinstalling') using the s
 
 While the app is installed, you will incur cost on your Twilio account. To prevent any further expenses, uninstall the app with
 
-    $ twilio installer:uninstall
-
+    $ twilio twilioapp:uninstall
 
