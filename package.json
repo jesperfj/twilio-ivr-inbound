@@ -1,0 +1,11 @@
+{
+  "name": "twilio-ivr-inbound",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "dependencies": {
+    "aws-sdk": "^2.647.0"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}
